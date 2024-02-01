@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #b{
+            color: whitesmoke;
+            background: graytext;
+            border-radius: 30px;
+        }
+        div {
+            margin-left: 15%;
+            margin-right: auto;
+            display: inline-block;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 55px;
+            font-weight: bold;
+            color: #E6D8AD;
+        }
+
+        body {
+            background-image: url('Images/Bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+       
+    </style>
+
+    <script>
+        function toggleTextbox(checkboxId, textboxId) {
+            var checkbox = document.getElementById(checkboxId);
+            var textbox = document.getElementById(textboxId);
+
+            // Enable/disable the textbox based on the checkbox state
+            textbox.disabled = !checkbox.checked;
+
+            // Clear the textbox value if it's disabled
+            if (!checkbox.checked) {
+                textbox.value = "";
+            }
+        }
+        
+        function calculate(){
+            var n500=parseInt(document.getElementById("txt1").value)||0;
+            var n200=parseInt(document.getElementById("txt2").value)||0;
+            var n100=parseInt(document.getElementById("txt3").value)||0;
+            
+            var sum=(n500*500)+(n200*200)+(n100*100);
+            
+            document.getElementById("op").value=sum;
+            
+        }
+        
+       
+    </script>
+
+    <title>Deposit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+     <form action="Cancel" ><input type="submit" value="Cancel" style="position: fixed; top: 10px; right: 15%;color: whitesmoke;background: graytext;border-radius: 10px"></form>
+       
+    <h1>Select Amount Using Following Denominations</h1>
+    <div> <form action="Setds" method="post">
+        <pre>
+
+        <img height="15%" width="20%" src="Images/n500.png">        <input type="checkbox" id="chk_n500" onclick="toggleTextbox('chk_n500', 'txt1')">        <input type="number" id="txt1" placeholder="Enter no of notes" disabled oninput="calculate()">
+
+        <img height="15%" width="20%" src="Images/n200.png">        <input type="checkbox" id="chk_n200" onclick="toggleTextbox('chk_n200', 'txt2')">        <input type="number" id="txt2" placeholder="Enter no of notes" disabled  oninput="calculate()">
+
+        <img height="15%" width="20%" src="Images/n100.png">        <input type="checkbox" id="chk_n100" onclick="toggleTextbox('chk_n100', 'txt3')">        <input type="number" id="txt3" placeholder="Enter no of notes" disabled  oninput="calculate()">
+        
+        
+
+
+
+
+
+                                                               <input type="text" name="damt" placeholder="Total Amount" id="op"  readonly >   <input id="b" type="submit" value="Confirm">
+        </pre>
+        </form>
+    </div>
+</body>
+
+</html>

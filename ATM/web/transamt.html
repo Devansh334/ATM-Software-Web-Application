@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: #E6D8AD;
+        }
+
+        body {
+            text-align: center;
+            background-image: url('Images/Bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #a {
+            display: block;
+            font-size: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 25px;
+            background: whitesmoke;
+        }
+
+        #b {
+            display: block;
+            font-size: 18px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 30px;
+            width: 100px;
+            color: whitesmoke;
+            background: graytext;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function validatePIN() {
+            var pinLength = parseInt(document.getElementById("a").value);
+
+
+            if (pinLength >= 100 && pinLength  <=50000 ) {
+                return true; // PIN is valid
+            } else {
+                alert("Please Enter VALID AMOUNT !!");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+    <title>Transfer Amount</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+     <form action="Cancel" ><input type="submit" value="Cancel" style="position: fixed; top: 10px; right: 15%;color: whitesmoke;background: graytext;border-radius: 10px"></form>
+       
+    <h1>Please Enter Amount To Transfer</h1>
+    <form action="Chkpin" id="post" onsubmit="return validatePIN()">
+        <br><br><br><br><br><br><br><br><br>
+        <input type="number" pattern="[0-9]*" name="transamt" placeholder="Enter amount here" id="a" required><br><br>
+        <input type="submit" value="CONFIRM" id="b">
+    </form>
+</body>
+
+</html>

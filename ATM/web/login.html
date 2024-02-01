@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <style>
+             h1{
+                text-align: center;
+                font-size: 60px;
+                font-weight: bold;
+                color:#E6D8AD;
+            }
+             body{
+                 text-align: center;
+                background-image: url('Images/Bg.png');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                }
+              #a{
+                    
+                 display: block;
+                font-size: 30px;
+                margin-left: auto;
+                margin-right: auto;
+                height:25px;
+                background: whitesmoke;
+                
+               }
+                #b{
+                    display: block;
+                font-size:18px;
+                margin-left: auto;
+                margin-right: auto;
+                height:30px;
+                width: 100px;
+                color: whitesmoke;
+                background: graytext;
+                border-radius: 10px;
+                }
+    
+        </style>
+        <title>User Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <script>
+        function validatePIN() {
+            var pinInput = document.getElementById("a").value;
+            var pinLength = pinInput.length;
+
+            if (pinLength === 7 && (pinInput[0]>='a'&& pinInput[0]<='z')||(pinInput[0]>='A'&& pinInput[0]<='Z')) {
+                return true; 
+            } else {
+                alert("Wrong Card ID Format");
+                return false; 
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <h1>WELCOME TO ATM</h1>
+        <form action="Login" method="post">
+            
+                
+                <br><br><br><br><br><br><br><br><br>
+                <input type="text" name="cardid" placeholder="Enter Card ID" id="a" onsubmit="return validatePIN()" required><br><br>
+                            
+                                  <input type="submit" value="PROCEED" id="b">
+            
+        </form>
+    </body>
+</html>
