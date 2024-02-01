@@ -58,7 +58,7 @@ public class Withd extends HttpServlet {
         try{
         
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Bank","root","Dev_123goyal");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Bank","root","root");
             Statement smt = cn.createStatement();
             ResultSet rs = smt.executeQuery("select * from ATM where cardid = '"+cardid+"'");
             if(rs.next()){
